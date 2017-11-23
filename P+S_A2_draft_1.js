@@ -50,7 +50,7 @@ function displayCustomerType (statusType)
   if (customerList.length > 0)
     {
       if (statusType = 'child')
-        displayCustomerType('child');
+        displayCustomerType ('child');
       else
         displayCustomerType('adult');
     }
@@ -70,5 +70,7 @@ function identifyThenDeleteCustomer ()
 //I don't know about this one either
 function deleteCustomer (aName, aStatus)
 {
-
+  console.log(delete customerList.name);
+  console.log(delete customerList.status);
+  //delete customerName.customerStatus
 }
