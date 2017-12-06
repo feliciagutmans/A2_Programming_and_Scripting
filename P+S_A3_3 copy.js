@@ -25,9 +25,9 @@ function addCustomer ()
   customerList[newIndex]  = new Object;
 
   //Asks user to input the customer's name
-  customerList[newIndex].name = prompt('What is the customer\'s name?');
+  customerList[newIndex].name = prompt('What is the customer\'s name?').trim();
   //Asks user to input whether the customer is an 'adult' or a 'child'
-  customerList[newIndex].status = prompt('Are they an \'adult\' or a \'child\'?');
+  customerList[newIndex].status = prompt('Are they an \'adult\' or a \'child\'?').trim();
   }
 }
 
@@ -77,10 +77,10 @@ function displayCustomerType (statusType)
 //Prompting user to input the name and status type of the customer they want to delete
 function identifyThenDeleteCustomer ()
 {
-    var customerName = prompt('Enter the name of the customer to delete:');
-    var customerStatus = prompt('Enter \'child\' or \'adult\':');
+    var customerName = prompt('Enter the name of the customer to delete:').trim();
+    var customerStatus = prompt('Enter \'child\' or \'adult\':').trim();
     while (!(customerStatus == 'child' || customerStatus == 'adult'))
-        customerStatus = prompt('Error - enter \'child\' or \'adult\':');
+        customerStatus = prompt('Error - enter \'child\' or \'adult\':').trim();
     deleteCustomer(customerName,customerStatus);
 }
 
