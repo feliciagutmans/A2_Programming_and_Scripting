@@ -18,6 +18,7 @@ function addCustomer ()
   if (customerList.length > MAX_CUSTOMERS)
     alert ('error- maxiumum customers reached. Please remove one customer');
   else
+  {
   var newIndex = customerList.length;
   customerList[newIndex]  = new Object;
 
@@ -25,6 +26,7 @@ function addCustomer ()
   customerList[newIndex].name = prompt('What is the customer\'s name?');
   //Asks user to input whether the customer is an 'adult' or a 'child'
   customerList[newIndex].status = prompt('Are they an \'adult\' or a \'child\'?');
+  }
 }
 
 
