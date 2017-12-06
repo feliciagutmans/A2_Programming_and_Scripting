@@ -4,17 +4,19 @@ by recording the name of each customer currently on the trampoline and whether
 they are an adult or a child. It must also make sure that no more than five
 people are on the trampoline at any one time. */
 
-/* Defines the maximum amount of customers allowed on trampoline at one time
-to be 5 */
-const MAX_CUSTOMERS = 5;
+/* Defines the max amount of customers allowed on trampoline at one time to be 5 */
+const MAX_CUSTOMERS = 4;
 
 var customerList = new Array();
 
+/* Defines recurring error message for when no customers have been inputted*/
 var inputError = 'Error- there are no customers to ';
 
 //Here we allow the user to input new customers
 function addCustomer ()
 {
+  /* If trampoline list is longer than 5 customers, prevent user from adding
+  any more and return error message, prompting user to delete customers. */
   if (customerList.length > MAX_CUSTOMERS)
     alert ('error- maxiumum customers reached. Please remove one customer');
   else
