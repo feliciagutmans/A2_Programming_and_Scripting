@@ -10,6 +10,8 @@ const MAX_CUSTOMERS = 5;
 
 var customerList = new Array();
 
+var inputError = 'Error- there are no customers to ';
+
 //Here we allow the user to input new customers
 function addCustomer ()
 {
@@ -38,7 +40,7 @@ function displayAllCustomers ()
 
 //Returns error message if no customers were previously inputted to the system
   if (message=='')
-      message = 'Error- There are no customers to display.';
+      message = (inputError + String('display.'));
   alert(message);
 }
 
@@ -51,7 +53,7 @@ function deleteLastCustomer ()
     alert('The customer has been deleted')
   }
   else
-    alert ('Error- There are no customers to delete.')
+  alert(inputError + String('delete.')); // Returns error if no customers to delete
 }
 
 //Distinguishes two customer types
@@ -64,7 +66,7 @@ function displayCustomerType (statusType)
         message += customerList[i].name + ': ' + String(customerList[i].status) + '.\n';
     }
     if (message=='')
-        message = 'There are no customers to display.';
+        message = (inputError + String('display.'));
     alert(message);
   }
 
@@ -84,10 +86,10 @@ function deleteCustomer (aName, aStatus)
 {
   for (i=0;i < customerList.length;i++)
   {
-    //finds the position of the person the user wants to delete
+    //Finds the position of the person the user wants to delete
     if (customerList[i].name==aName && customerList[i].status == aStatus)
     {
-      /* keeps repeating until it gets to the second to last person in the
+      /* Keeps repeating until it gets to the second to last person in the
        list*/
       while(i < customerList.length - 1)
       {
@@ -100,8 +102,5 @@ function deleteCustomer (aName, aStatus)
       // removes the duplicated last person in the list
       deleteLastCustomer()
     }
-  //  else alert ('Error- Incorrect input. Please try again.')
   }
-
-
 }
